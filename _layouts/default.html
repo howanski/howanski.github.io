@@ -11,7 +11,7 @@
   <title>plan: h</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="shortcut icon" href="/assets/images/favicon.ico">
 
 </head>
@@ -19,15 +19,15 @@
 <body>
 
   <!-- Navigation -->
-  {% include navigation.html %}
+  {% include navigation.html active_nav=page.active_nav %}
 
   <!-- Page Content -->
   {{ content }}
 
 
   <!-- Bootstrap core JavaScript -->
-  <script src="assets/jquery/jquery.slim.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/jquery/jquery.slim.min.js"></script>
+  <script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

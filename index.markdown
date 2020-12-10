@@ -1,5 +1,6 @@
 ---
 layout: layout_main
+active_nav: home
 ---
   <div class="container">
     <div class="row">
