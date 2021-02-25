@@ -12,9 +12,15 @@
               {% if page.active_nav=='home' %}<span class="sr-only">(current)</span>{% endif %}
             </a>
           </li>
+          <li class="nav-item{% if page.active_nav=='software' %} active{% endif %}">
+            <a class="nav-link" href="/software">Software
+              {% if page.active_nav=='software' %}<span class="sr-only">(current)</span>{% endif %}
+            </a>
+          </li>
           <li class="nav-item{% if page.active_nav=='contact' %} active{% endif %}">
-            <a class="nav-link" href="/contact">Contact</a>
-            {% if page.active_nav=='contact' %}<span class="sr-only">(current)</span>{% endif %}
+            <a class="nav-link" href="/contact">Contact
+              {% if page.active_nav=='contact' %}<span class="sr-only">(current)</span>{% endif %}
+            </a>
           </li>
         </ul>
       </div>
