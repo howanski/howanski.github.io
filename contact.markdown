@@ -13,7 +13,7 @@ active_nav: contact
         <p>
           Best way to talk to me is to simply send an email to 
           <a href="mailto:maciej.howanski@outlook.com?subject=Absolutely%20not%20an%20nigerian%20scam&body=Hi, Matt!">maciej.howanski@outlook.com</a>.
-          <br>That's simple, reliable, well documented, and I'll have conversation history stored in place safer than my aging smartphone that I refuse to answer 99% of time.
+          <br>That's simple, reliable, easy to use, and easy to follow-up.
         </p>
         <p>
           There's also a vCard behind this QR code, if you want to store me as a contact for future use to make quick, two-week email rehearsal.
