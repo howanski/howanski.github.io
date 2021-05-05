@@ -3,12 +3,59 @@ permalink: /firefox_home.html
 ---
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>plan: h</title>
-    <meta name="description" content="plan: h">
-  </head>
-  <body> 
-    <img src="/assets/images/banner_plan_h.png" style="width: 100%;">
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>plan: h</title>
+  <meta name="description" content="plan: h">
+  <style>
+    @font-face {
+      font-family: Cicle Semi;
+      src: url('/assets/fonts/Cicle\ Semi.ttf');
+    }
+
+    p#clock {
+      font-family: Cicle Semi;
+      font-size: 1000%;
+      text-align: center;
+      color: #4c566a;
+      margin-top: 10px;
+      margin-bottom: 0px;
+    }
+
+    p#speedmeter {
+      font-family: Cicle Semi;
+      font-size: 1000%;
+      text-align: center;
+      color: #4c566a;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+  </style>
+  <script>
+    function updateClock() {
+      let dateNow = new Date();
+      let hours = dateNow.getHours();
+      if (hours < 10) {
+        hours = "0" + hours;
+      }
+      let minutes = dateNow.getMinutes();
+      if (minutes < 10) {
+        minutes = "0" + minutes;
+      }
+      let stringDate = hours + ":" + minutes;
+      document.getElementById("clock").innerHTML = stringDate;
+    }
+    setTimeout(() => { updateClock(); }, 500);
+    setInterval(updateClock, 5000);
+
+  </script>
+</head>
+
+<body>
+  <img src="/assets/images/banner_plan_h.png" style="width: 100%;">
+  <p id="clock" style="width: 100%;">d^.^b</p>
+  <p id="speedmeter">(✖╭╮✖)</p>
+</body>
+
 </html>
