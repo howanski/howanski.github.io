@@ -21,6 +21,7 @@ permalink: /firefox_home.html
       color: #4c566a;
       margin-top: 10px;
       margin-bottom: 0px;
+      text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
     }
 
     p#speedmeter {
@@ -30,6 +31,7 @@ permalink: /firefox_home.html
       color: #4c566a;
       margin-top: 0px;
       margin-bottom: 0px;
+      text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
     }
   </style>
   <script>
@@ -117,20 +119,21 @@ permalink: /firefox_home.html
       let trafficMaxLimit = parseInt(fetchedData['trafficmaxlimit']);
       let trafficLeft = trafficMaxLimit - currentMonthUsedData;
       let speedLeft = (trafficLeft / monthLeftSeconds) / 8 / 100;
-      speedLeft = speedLeft.toFixed(2);
+      speedLeft = speedLeft.toFixed(4);
 
-      trafficLeft /= 1024;
-      trafficLeftReadable = trafficLeft.toFixed(2) + " kB";
-      if (trafficLeft > 1024) {
+      if (!isNaN(speedLeft)) {
         trafficLeft /= 1024;
-        trafficLeftReadable = trafficLeft.toFixed(2) + " MB";
+        trafficLeftReadable = trafficLeft.toFixed(4) + " kB";
+        if (trafficLeft > 1024) {
+          trafficLeft /= 1024;
+          trafficLeftReadable = trafficLeft.toFixed(4) + " MB";
+        }
+        if (trafficLeft > 1024) {
+          trafficLeft /= 1024;
+          trafficLeftReadable = trafficLeft.toFixed(4) + " GB";
+        }
+        document.getElementById("speedmeter").innerHTML = "M: " + speedLeft + " kB/s (" + trafficLeftReadable + ")";
       }
-      if (trafficLeft > 1024) {
-        trafficLeft /= 1024;
-        trafficLeftReadable = trafficLeft.toFixed(2) + " GB";
-      }
-
-      document.getElementById("speedmeter").innerHTML = "M: " + speedLeft + " kB/s (" + trafficLeftReadable + ")";
     }
     setInterval(paintRouterData, 3000);
 
@@ -140,8 +143,8 @@ permalink: /firefox_home.html
 
 <body>
   <img src="/assets/images/banner_plan_h.png" style="width: 100%;">
-  <p id="clock" style="width: 100%;">d^.^b</p>
-  <p id="speedmeter"><a style="font-size: 50%;" href="https://addons.mozilla.org/pl/firefox/addon/cross-domain-cors/">
+  <p id="clock" style="width: 100%;">&#128337;</p>
+  <p id="speedmeter"><a style="font-size: 20%;" href="https://addons.mozilla.org/pl/firefox/addon/cross-domain-cors/">
       CORS addon</a></p>
 </body>
 
