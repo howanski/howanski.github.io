@@ -107,22 +107,20 @@ permalink: /firefox_home.html
     setInterval(fetchCurrentMonthData, fetchInterval);
 
     function paintRouterData() {
-      let lastClearance = new Date(fetchedData['MonthLastClearTime'] + ' 00:00:01');
-      let futureClearance = new Date(fetchedData['MonthLastClearTime'] + ' 23:59:59');
+      let futureClearance = new Date(fetchedData['MonthLastClearTime'] + ' 00:00:01');
       futureClearance.setMonth(futureClearance.getMonth() + 1);
-      let monthLengthMs = futureClearance - lastClearance;
-      let monthDurationMs = parseInt(fetchedData['MonthDuration']) * 1000;
-      let monthLeftMs = monthLengthMs - monthDurationMs;
+      let now = new Date();
+      monthLeftMs = futureClearance - now;
       let monthLeftSeconds = monthLeftMs / 1000;
 
       let currentMonthUsedData = parseInt(fetchedData['CurrentMonthDownload']) + parseInt(fetchedData['CurrentMonthUpload']);
       let trafficMaxLimit = parseInt(fetchedData['trafficmaxlimit']);
       let trafficLeft = trafficMaxLimit - currentMonthUsedData;
-      let speedLeft = (trafficLeft / monthLeftSeconds) / 8 / 100;
+      trafficLeft /= 1024;
+      let speedLeft = (trafficLeft / monthLeftSeconds);
       speedLeft = speedLeft.toFixed(4);
 
       if (!isNaN(speedLeft)) {
-        trafficLeft /= 1024;
         trafficLeftReadable = trafficLeft.toFixed(4) + " kB";
         if (trafficLeft > 1024) {
           trafficLeft /= 1024;
