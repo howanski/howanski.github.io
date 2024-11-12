@@ -12,9 +12,9 @@ active_nav: contact
         <p class="lead">Where the world hello's to me</p>
         <p>
           Best way to talk to me is to simply send an email to 
-          <a class="text-info" href="mailto:maciej.howanski@outlook.com?subject=Absolutely%20not%20an%20nigerian%20scam&body=Hi, Matt!">maciej.howanski@outlook.com</a>.
+          <a class="text-info" href="mailto:Maciej%20Howański<howanski@windowslive.com>?subject=Hello%20there!&body=Hi, Matt!" target="_blank">howanski@windowslive.com</a>.
           <br>That's reliable, easy to use, and easy to follow-up.
-          <br>Also: I <b>will</b> find you in spam, phone antispam filter doesn't work that way...
+          <br>Also: It <b>will</b> never be obsolete as all of these social media accounts.
         </p>
         <p>
           There's also a vCard behind this QR code, if you want to store me as a contact for future use to make quick, two-week email rehearsal.
